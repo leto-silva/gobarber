@@ -1,4 +1,5 @@
 const { Router } = require('express');
+
 import User from './app/models/User';
 
 const routes = new Router();
@@ -12,6 +13,15 @@ routes.get('/', async (req,res)=>{
   });
 
   return res.json(user);
+});
+
+export default routes;
+
+
+const routes = new Router();
+
+routes.get('/', (req, res) => {
+  return res.json({ message: 'Hello World4' });
 });
 
 export default routes;

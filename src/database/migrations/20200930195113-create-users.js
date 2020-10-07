@@ -1,6 +1,10 @@
-
 module.exports = {
   up: (queryInterface, Sequelize) => {
+
+    const sequelize = require("sequelize");
+
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
     return queryInterface.createTable('users', {
       id: {
         type: Sequelize.INTEGER,
@@ -34,10 +38,17 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
+
     });
   },
 
   down: (queryInterface, Sequelize) => {
+
+    });
+  },
+
+  down: async (queryInterface, Sequelize) => {
+
     return queryInterface.dropTable('users');
   },
 };
